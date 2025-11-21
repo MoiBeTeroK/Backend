@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "GFmV0NRUX8k=",
+  "dgSpecHash": "2s/HvqP67PY=",
   "success": true,
-  "projectFilePath": "/Users/moibeterok/MySolution/Migrations/Migrations.csproj",
+  "projectFilePath": "/Users/moibeterok/Уник/Backend/MySolution/Migrations/Migrations.csproj",
   "expectedPackageFiles": [
     "/Users/moibeterok/.nuget/packages/azure.core/1.38.0/azure.core.1.38.0.nupkg.sha512",
     "/Users/moibeterok/.nuget/packages/azure.identity/1.11.4/azure.identity.1.11.4.nupkg.sha512",

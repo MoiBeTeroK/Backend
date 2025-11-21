@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/moibeterok/MySolution/Models/Models.csproj",
+      "projectUniqueName": "/Users/moibeterok/Уник/Backend/MySolution/Models/Models.csproj",
       "projectName": "Models",
-      "projectPath": "/Users/moibeterok/MySolution/Models/Models.csproj",
+      "projectPath": "/Users/moibeterok/Уник/Backend/MySolution/Models/Models.csproj",
       "packagesPath": "/Users/moibeterok/.nuget/packages/",
-      "outputPath": "/Users/moibeterok/MySolution/Models/obj/",
+      "outputPath": "/Users/moibeterok/Уник/Backend/MySolution/Models/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/moibeterok/.nuget/NuGet/NuGet.Config"

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/moibeterok/MySolution/WebApi/WebApi.csproj": {}
+    "/Users/moibeterok/Уник/Backend/MySolution/WebApi/WebApi.csproj": {}
   },
   "projects": {
-    "/Users/moibeterok/MySolution/Migrations/Migrations.csproj": {
+    "/Users/moibeterok/Уник/Backend/MySolution/Migrations/Migrations.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/moibeterok/MySolution/Migrations/Migrations.csproj",
+        "projectUniqueName": "/Users/moibeterok/Уник/Backend/MySolution/Migrations/Migrations.csproj",
         "projectName": "Migrations",
-        "projectPath": "/Users/moibeterok/MySolution/Migrations/Migrations.csproj",
+        "projectPath": "/Users/moibeterok/Уник/Backend/MySolution/Migrations/Migrations.csproj",
         "packagesPath": "/Users/moibeterok/.nuget/packages/",
-        "outputPath": "/Users/moibeterok/MySolution/Migrations/obj/",
+        "outputPath": "/Users/moibeterok/Уник/Backend/MySolution/Migrations/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/moibeterok/.nuget/NuGet/NuGet.Config"
@@ -97,14 +97,14 @@
         }
       }
     },
-    "/Users/moibeterok/MySolution/Models/Models.csproj": {
+    "/Users/moibeterok/Уник/Backend/MySolution/Models/Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/moibeterok/MySolution/Models/Models.csproj",
+        "projectUniqueName": "/Users/moibeterok/Уник/Backend/MySolution/Models/Models.csproj",
         "projectName": "Models",
-        "projectPath": "/Users/moibeterok/MySolution/Models/Models.csproj",
+        "projectPath": "/Users/moibeterok/Уник/Backend/MySolution/Models/Models.csproj",
         "packagesPath": "/Users/moibeterok/.nuget/packages/",
-        "outputPath": "/Users/moibeterok/MySolution/Models/obj/",
+        "outputPath": "/Users/moibeterok/Уник/Backend/MySolution/Models/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/moibeterok/.nuget/NuGet/NuGet.Config"
@@ -156,14 +156,14 @@
         }
       }
     },
-    "/Users/moibeterok/MySolution/WebApi/WebApi.csproj": {
+    "/Users/moibeterok/Уник/Backend/MySolution/WebApi/WebApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/moibeterok/MySolution/WebApi/WebApi.csproj",
+        "projectUniqueName": "/Users/moibeterok/Уник/Backend/MySolution/WebApi/WebApi.csproj",
         "projectName": "WebApi",
-        "projectPath": "/Users/moibeterok/MySolution/WebApi/WebApi.csproj",
+        "projectPath": "/Users/moibeterok/Уник/Backend/MySolution/WebApi/WebApi.csproj",
         "packagesPath": "/Users/moibeterok/.nuget/packages/",
-        "outputPath": "/Users/moibeterok/MySolution/WebApi/obj/",
+        "outputPath": "/Users/moibeterok/Уник/Backend/MySolution/WebApi/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/moibeterok/.nuget/NuGet/NuGet.Config"
@@ -178,11 +178,11 @@
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "/Users/moibeterok/MySolution/Migrations/Migrations.csproj": {
-                "projectPath": "/Users/moibeterok/MySolution/Migrations/Migrations.csproj"
+              "/Users/moibeterok/Уник/Backend/MySolution/Migrations/Migrations.csproj": {
+                "projectPath": "/Users/moibeterok/Уник/Backend/MySolution/Migrations/Migrations.csproj"
               },
-              "/Users/moibeterok/MySolution/Models/Models.csproj": {
-                "projectPath": "/Users/moibeterok/MySolution/Models/Models.csproj"
+              "/Users/moibeterok/Уник/Backend/MySolution/Models/Models.csproj": {
+                "projectPath": "/Users/moibeterok/Уник/Backend/MySolution/Models/Models.csproj"
               }
             }
           }
@@ -218,6 +218,10 @@
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
               "version": "[9.0.10, )"
+            },
+            "RabbitMQ.Client": {
+              "target": "Package",
+              "version": "[7.1.2, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",

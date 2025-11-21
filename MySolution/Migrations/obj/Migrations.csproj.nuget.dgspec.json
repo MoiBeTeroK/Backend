@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/moibeterok/MySolution/Migrations/Migrations.csproj": {}
+    "/Users/moibeterok/Уник/Backend/MySolution/Migrations/Migrations.csproj": {}
   },
   "projects": {
-    "/Users/moibeterok/MySolution/Migrations/Migrations.csproj": {
+    "/Users/moibeterok/Уник/Backend/MySolution/Migrations/Migrations.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/moibeterok/MySolution/Migrations/Migrations.csproj",
+        "projectUniqueName": "/Users/moibeterok/Уник/Backend/MySolution/Migrations/Migrations.csproj",
         "projectName": "Migrations",
-        "projectPath": "/Users/moibeterok/MySolution/Migrations/Migrations.csproj",
+        "projectPath": "/Users/moibeterok/Уник/Backend/MySolution/Migrations/Migrations.csproj",
         "packagesPath": "/Users/moibeterok/.nuget/packages/",
-        "outputPath": "/Users/moibeterok/MySolution/Migrations/obj/",
+        "outputPath": "/Users/moibeterok/Уник/Backend/MySolution/Migrations/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/moibeterok/.nuget/NuGet/NuGet.Config"
