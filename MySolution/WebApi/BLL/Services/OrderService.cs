@@ -1,4 +1,8 @@
-public class OrderService(UnitOfWork unitOfWork, IOrderRepository orderRepository, IOrderItemRepository orderItemRepository)
+using Microsoft.Extensions.Options;
+using Project.Messages;
+using System.Net;
+namespace WebApi.BLL.Services;
+public class OrderService(UnitOfWork unitOfWork, IOrderRepository orderRepository, IOrderItemRepository orderItemRepository, RabbitMqService _rabbitMqService, IOptions<RabbitMqSettings> settings)
 {
     /// <summary>
     /// Метод создания заказов
@@ -16,58 +20,68 @@ public class OrderService(UnitOfWork unitOfWork, IOrderRepository orderRepositor
             // OrderItem-ов может быть несколько
             // Подготовка заказов к вставке
             // Подготовка заказов к вставке
-            var ordersArray = orderUnits
-                .Select(u => new V1OrderDal
-                {
-                    CustomerId = u.CustomerId,
-                    DeliveryAddress = u.DeliveryAddress,
-                    TotalPriceCents = u.TotalPriceCents,
-                    TotalPriceCurrency = u.TotalPriceCurrency,
-                    CreatedAt = now,
-                    UpdatedAt = now
-                })
-                .ToArray();
-
-            // Вставка заказов в БД
-            var savedOrders = await orderRepository.BulkInsert(ordersArray, token);
-
-            // Подготовка позиций заказов
-            var allOrderItems = new List<V1OrderItemDal>();
-
-            foreach (var (orderUnit, index) in orderUnits.Select((ou, idx) => (ou, idx)))
+            var ordersToInsert = orderUnits.Select(ou => new V1OrderDal //конвертация BLL объектов в DAL объекты
             {
-                var orderId = savedOrders[index].Id;
+                CustomerId = ou.CustomerId,
+                DeliveryAddress = ou.DeliveryAddress,
+                TotalPriceCents = ou.TotalPriceCents,
+                TotalPriceCurrency = ou.TotalPriceCurrency,
+                CreatedAt = now,
+                UpdatedAt = now
+            }).ToArray();
 
-                var items = (orderUnit.OrderItems ?? Array.Empty<OrderItemUnit>())
-                    .Select(oi => new V1OrderItemDal
-                    {
-                        OrderId = orderId,
-                        ProductId = oi.ProductId,
-                        Quantity = oi.Quantity,
-                        ProductTitle = oi.ProductTitle,
-                        ProductUrl = oi.ProductUrl,
-                        PriceCents = oi.PriceCents,
-                        PriceCurrency = oi.PriceCurrency,
-                        CreatedAt = now,
-                        UpdatedAt = now
-                    });
+            var insertedOrders = await orderRepository.BulkInsert(ordersToInsert, token);
 
-                allOrderItems.AddRange(items);
+            var orderItemsToInsert = orderUnits
+                .SelectMany((ou, orderIndex) =>
+                    (ou.OrderItems ?? Array.Empty<OrderItemUnit>())
+                        .Select(oi => new V1OrderItemDal
+                         {
+                            OrderId = insertedOrders[orderIndex].Id,
+                            ProductId = oi.ProductId,
+                            Quantity = oi.Quantity,
+                            ProductTitle = oi.ProductTitle,
+                            ProductUrl = oi.ProductUrl,
+                            PriceCents = oi.PriceCents,
+                            PriceCurrency = oi.PriceCurrency,
+                            CreatedAt = now,
+                            UpdatedAt = now
+                         })
+                ).ToArray();
+
+            V1OrderItemDal[] insertedOrderItems = Array.Empty<V1OrderItemDal>();
+            if (insertedOrders.Length > 0)
+            {
+                insertedOrderItems = await orderItemRepository.BulkInsert(orderItemsToInsert, token);
             }
 
-            // Вставка позиций заказов, если есть заказы
-            V1OrderItemDal[] savedOrderItems = Array.Empty<V1OrderItemDal>();
-            if (savedOrders.Length > 0 && allOrderItems.Count > 0)
-            {
-                savedOrderItems = await orderItemRepository.BulkInsert(allOrderItems.ToArray(), token);
-            }
-
-            // Подтверждение транзакции
             await transaction.CommitAsync(token);
 
-            // Создание lookup по OrderId
-            var itemsLookup = savedOrderItems.ToLookup(x => x.OrderId);
-            return Map(savedOrders, itemsLookup);
+            var orderItemLookup = insertedOrderItems.ToLookup(x => x.OrderId);
+            
+            var messages = ordersToInsert.Select(oti => new OrderCreatedMessage
+            {
+                CustomerId = oti.CustomerId,
+                DeliveryAddress = oti.DeliveryAddress,
+                TotalPriceCents = oti.TotalPriceCents,
+                TotalPriceCurrency = oti.TotalPriceCurrency,
+                CreatedAt = now,
+                UpdatedAt = now,
+                OrderItems = orderItemLookup[oti.Id].Select(oil => new global::Models.Dto.Common.OrderItemUnit()
+                {
+                    ProductId = oil.ProductId,
+                    Quantity = oil.Quantity,
+                    ProductTitle = oil.ProductTitle,
+                    ProductUrl = oil.ProductUrl,
+                    PriceCents = oil.PriceCents,
+                    PriceCurrency = oil.PriceCurrency
+                }).ToArray()
+            }).ToArray();
+            Console.WriteLine(messages);
+            
+            await _rabbitMqService.Publish(messages, settings.Value.OrderCreatedQueue, token);
+
+            return Map(insertedOrders, orderItemLookup);
         }
         catch (Exception e) 
         {

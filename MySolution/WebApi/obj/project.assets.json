@@ -1509,6 +1509,9 @@
       "Project.Messages/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v9.0",
+        "dependencies": {
+          "Models": "1.0.0"
+        },
         "compile": {
           "bin/placeholder/Project.Messages.dll": {}
         },

@@ -242,7 +242,11 @@
         "frameworks": {
           "net9.0": {
             "targetAlias": "net9.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "/Users/moibeterok/Уник/Backend/MySolution/Models/Models.csproj": {
+                "projectPath": "/Users/moibeterok/Уник/Backend/MySolution/Models/Models.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
