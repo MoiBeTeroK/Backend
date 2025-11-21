@@ -1,6 +1,5 @@
 using Microsoft.Extensions.Options;
 using Project.Messages;
-using System.Net;
 namespace WebApi.BLL.Services;
 public class OrderService(UnitOfWork unitOfWork, IOrderRepository orderRepository, IOrderItemRepository orderItemRepository, RabbitMqService _rabbitMqService, IOptions<RabbitMqSettings> settings)
 {
@@ -59,22 +58,27 @@ public class OrderService(UnitOfWork unitOfWork, IOrderRepository orderRepositor
 
             var orderItemLookup = insertedOrderItems.ToLookup(x => x.OrderId);
             
-            var messages = ordersToInsert.Select(oti => new OrderCreatedMessage
+            var messages = insertedOrders.Select(oti => new OrderCreatedMessage
             {
+                Id = oti.Id,
                 CustomerId = oti.CustomerId,
                 DeliveryAddress = oti.DeliveryAddress,
                 TotalPriceCents = oti.TotalPriceCents,
                 TotalPriceCurrency = oti.TotalPriceCurrency,
-                CreatedAt = now,
-                UpdatedAt = now,
+                CreatedAt = oti.CreatedAt,
+                UpdatedAt = oti.CreatedAt,
                 OrderItems = orderItemLookup[oti.Id].Select(oil => new global::Models.Dto.Common.OrderItemUnit()
                 {
+                    Id = oil.Id,
+                    OrderId = oil.OrderId,
                     ProductId = oil.ProductId,
                     Quantity = oil.Quantity,
                     ProductTitle = oil.ProductTitle,
                     ProductUrl = oil.ProductUrl,
                     PriceCents = oil.PriceCents,
-                    PriceCurrency = oil.PriceCurrency
+                    PriceCurrency = oil.PriceCurrency,
+                    CreatedAt = oil.CreatedAt,
+                    UpdatedAt = oil.UpdatedAt,
                 }).ToArray()
             }).ToArray();
             Console.WriteLine(messages);
