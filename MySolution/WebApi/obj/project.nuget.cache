@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "DHdfmt9a3/0=",
+  "dgSpecHash": "bwx/XIqRRKI=",
   "success": true,
   "projectFilePath": "/Users/moibeterok/Уник/Backend/MySolution/WebApi/WebApi.csproj",
   "expectedPackageFiles": [
@@ -61,6 +61,7 @@
     "/Users/moibeterok/.nuget/packages/microsoft.netcore.targets/1.1.0/microsoft.netcore.targets.1.1.0.nupkg.sha512",
     "/Users/moibeterok/.nuget/packages/microsoft.openapi/1.6.22/microsoft.openapi.1.6.22.nupkg.sha512",
     "/Users/moibeterok/.nuget/packages/microsoft.sqlserver.server/1.0.0/microsoft.sqlserver.server.1.0.0.nupkg.sha512",
+    "/Users/moibeterok/.nuget/packages/newtonsoft.json/13.0.4/newtonsoft.json.13.0.4.nupkg.sha512",
     "/Users/moibeterok/.nuget/packages/npgsql/9.0.3/npgsql.9.0.3.nupkg.sha512",
     "/Users/moibeterok/.nuget/packages/rabbitmq.client/7.1.2/rabbitmq.client.7.1.2.nupkg.sha512",
     "/Users/moibeterok/.nuget/packages/swashbuckle.aspnetcore/7.3.1/swashbuckle.aspnetcore.7.3.1.nupkg.sha512",

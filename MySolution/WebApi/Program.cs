@@ -2,6 +2,7 @@
 using Dapper;
 using FluentValidation;
 using WebApi;
+using WebApi.BLL.Services;
 // создается билдер веб приложения
 var builder = WebApplication.CreateBuilder(args);
 DefaultTypeMap.MatchNamesWithUnderscores = true;
@@ -12,7 +13,9 @@ builder.Services.Configure<DbSettings>(builder.Configuration.GetSection(nameof(D
 builder.Services.Configure<RabbitMqSettings>(builder.Configuration.GetSection(nameof(RabbitMqSettings)));
 builder.Services.AddScoped<IOrderRepository, OrderRepository>();
 builder.Services.AddScoped<IOrderItemRepository, OrderItemRepository>();
+
 builder.Services.AddScoped<OrderService>();
+builder.Services.AddScoped<RabbitMqService>();
 
 builder.Services.AddValidatorsFromAssemblyContaining(typeof(Program));
 builder.Services.AddScoped<ValidatorFactory>();
