@@ -2,7 +2,7 @@ using FluentValidation;
 using Models.Dto.V1.Requests;
 
 
-public class V1CreateAuditLogOrderRequestValidator : AbstractValidator<V1CreateAuditLogOrderRequest>
+public class V1CreateAuditLogOrderRequestValidator : AbstractValidator<V1AuditLogOrderRequest>
 {
     public V1CreateAuditLogOrderRequestValidator()
     {

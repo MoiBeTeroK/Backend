@@ -213,3 +213,9 @@
 /Users/moibeterok/Уник/Backend/MySolution/WebApi/obj/Debug/net9.0/WebApi.csproj.Up2Date
 /Users/moibeterok/Уник/Backend/MySolution/WebApi/obj/Debug/net9.0/WebApi.genruntimeconfig.cache
 /Users/moibeterok/Уник/Backend/MySolution/WebApi/obj/Debug/net9.0/ref/WebApi.dll
+/Users/moibeterok/Уник/Backend/MySolution/WebApi/bin/Debug/net9.0/Consumer.deps.json
+/Users/moibeterok/Уник/Backend/MySolution/WebApi/bin/Debug/net9.0/Consumer.runtimeconfig.json
+/Users/moibeterok/Уник/Backend/MySolution/WebApi/bin/Debug/net9.0/Consumer.staticwebassets.endpoints.json
+/Users/moibeterok/Уник/Backend/MySolution/WebApi/bin/Debug/net9.0/Consumer
+/Users/moibeterok/Уник/Backend/MySolution/WebApi/bin/Debug/net9.0/Consumer.dll
+/Users/moibeterok/Уник/Backend/MySolution/WebApi/bin/Debug/net9.0/Consumer.pdb

@@ -1,8 +1,8 @@
 namespace Models.Dto.V1.Requests;
 
-public class V1CreateAuditLogOrderRequest
+public class V1AuditLogOrderRequest
 {
-    public LogOrder[] Orders { get; set; }
+    public LogOrder[] Orders { get; set; } =  Array.Empty<LogOrder>();
     
     public class LogOrder
     {
@@ -12,6 +12,6 @@ public class V1CreateAuditLogOrderRequest
     
         public long CustomerId { get; set; }
     
-        public string OrderStatus { get; set; }
+        public string OrderStatus { get; set; } = string.Empty;
     }
 }

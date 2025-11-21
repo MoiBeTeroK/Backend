@@ -1,7 +1,5 @@
 using Dapper;
 
-namespace BackendProject.DAL.Repositories;
-
 public class AuditOrderRepository(UnitOfWork unitOfWork) : IAuditLogOrderRepository
 {
     public async Task<V1AuditLogOrderDal[]> BulkInsert(V1AuditLogOrderDal[] logs, CancellationToken token)

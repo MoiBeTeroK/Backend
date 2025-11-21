@@ -9,24 +9,26 @@ using WebApi.BLL.Services;
 public class AuditLogController(AuditLogService auditLogService, ValidatorFactory validatorFactory): ControllerBase
 {
     [HttpPost("batch-create")]
-    public async Task<ActionResult<V1CreateAuditLogOrderRequest>> V1BatchCreate([FromBody] V1CreateAuditLogOrderRequest request,
+    public async Task<ActionResult<V1AuditLogOrderRequest>> V1BatchCreate([FromBody] V1AuditLogOrderRequest request,
         CancellationToken token)
     {
-        var validationResult = await validatorFactory.GetValidator<V1CreateAuditLogOrderRequest>().ValidateAsync(request, token);
+        var validationResult = await validatorFactory.GetValidator<V1AuditLogOrderRequest>().ValidateAsync(request, token);
         if (!validationResult.IsValid)
         {
             return BadRequest(validationResult.ToDictionary());
         }
 
-        var res = await auditLogService.BatchInsert(request.Orders.Select(x => new AuditLogOrderUnit
+        var logUnits = request.Orders.Select(x => new AuditLogOrderUnit
         {
             OrderId = x.OrderId,
             OrderItemId = x.OrderItemId,
             CustomerId = x.CustomerId,
             OrderStatus = x.OrderStatus
-        }).ToArray(), token);
+        }).ToArray();
+
+        var res = await auditLogService.BatchInsert(logUnits, token);
         
-        return Ok(new V1CreateAuditLogOrderResponse()
+        return Ok(new V1AuditLogOrderResponse
         {
             Orders = Map(res)
         });

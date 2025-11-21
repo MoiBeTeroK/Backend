@@ -4,6 +4,88 @@
     "/Users/moibeterok/Уник/Backend/MySolution/WebApi/WebApi.csproj": {}
   },
   "projects": {
+    "/Users/moibeterok/Уник/Backend/MySolution/Consumer/Consumer.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/moibeterok/Уник/Backend/MySolution/Consumer/Consumer.csproj",
+        "projectName": "Consumer",
+        "projectPath": "/Users/moibeterok/Уник/Backend/MySolution/Consumer/Consumer.csproj",
+        "packagesPath": "/Users/moibeterok/.nuget/packages/",
+        "outputPath": "/Users/moibeterok/Уник/Backend/MySolution/Consumer/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/moibeterok/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {
+              "/Users/moibeterok/Уник/Backend/MySolution/Models/Models.csproj": {
+                "projectPath": "/Users/moibeterok/Уник/Backend/MySolution/Models/Models.csproj"
+              },
+              "/Users/moibeterok/Уник/Backend/MySolution/Project.Common/Project.Common.csproj": {
+                "projectPath": "/Users/moibeterok/Уник/Backend/MySolution/Project.Common/Project.Common.csproj"
+              },
+              "/Users/moibeterok/Уник/Backend/MySolution/Project.Messages/Project.Messages.csproj": {
+                "projectPath": "/Users/moibeterok/Уник/Backend/MySolution/Project.Messages/Project.Messages.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.OpenApi": {
+              "target": "Package",
+              "version": "[9.0.10, )"
+            },
+            "RabbitMQ.Client": {
+              "target": "Package",
+              "version": "[7.1.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.306/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
     "/Users/moibeterok/Уник/Backend/MySolution/Migrations/Migrations.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -306,6 +388,9 @@
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
+              "/Users/moibeterok/Уник/Backend/MySolution/Consumer/Consumer.csproj": {
+                "projectPath": "/Users/moibeterok/Уник/Backend/MySolution/Consumer/Consumer.csproj"
+              },
               "/Users/moibeterok/Уник/Backend/MySolution/Migrations/Migrations.csproj": {
                 "projectPath": "/Users/moibeterok/Уник/Backend/MySolution/Migrations/Migrations.csproj"
               },

@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "J3quvEV+6gw=",
+  "success": true,
+  "projectFilePath": "/Users/moibeterok/Уник/Backend/MySolution/Consumer/Consumer.csproj",
+  "expectedPackageFiles": [
+    "/Users/moibeterok/.nuget/packages/microsoft.aspnetcore.openapi/9.0.10/microsoft.aspnetcore.openapi.9.0.10.nupkg.sha512",
+    "/Users/moibeterok/.nuget/packages/microsoft.openapi/1.6.17/microsoft.openapi.1.6.17.nupkg.sha512",
+    "/Users/moibeterok/.nuget/packages/newtonsoft.json/13.0.4/newtonsoft.json.13.0.4.nupkg.sha512",
+    "/Users/moibeterok/.nuget/packages/rabbitmq.client/7.1.2/rabbitmq.client.7.1.2.nupkg.sha512",
+    "/Users/moibeterok/.nuget/packages/system.io.pipelines/8.0.0/system.io.pipelines.8.0.0.nupkg.sha512",
+    "/Users/moibeterok/.nuget/packages/system.threading.ratelimiting/8.0.0/system.threading.ratelimiting.8.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

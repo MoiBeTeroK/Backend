@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v9.0": {
       "WebApi/1.0.0": {
         "dependencies": {
+          "Consumer": "1.0.0",
           "Dapper": "2.1.11",
           "FluentValidation": "11.11.0",
           "FluentValidation.AspNetCore": "11.3.0",
@@ -817,6 +818,21 @@
       "System.Threading.RateLimiting/8.0.0": {},
       "System.Threading.Tasks.Extensions/4.5.4": {},
       "System.ValueTuple/4.5.0": {},
+      "Consumer/1.0.0": {
+        "dependencies": {
+          "Microsoft.AspNetCore.OpenApi": "9.0.10",
+          "Models": "1.0.0",
+          "Project.Common": "1.0.0",
+          "Project.Messages": "1.0.0",
+          "RabbitMQ.Client": "7.1.2"
+        },
+        "runtime": {
+          "Consumer.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
       "Migrations/1.0.0": {
         "dependencies": {
           "FluentMigrator": "6.2.0",
@@ -1467,6 +1483,11 @@
       "sha512": "sha512-okurQJO6NRE/apDIP23ajJ0hpiNmJ+f0BwOlB/cSqTLQlw5upkf+5+96+iG2Jw40G1fCVCyPz/FhIABUjMR+RQ==",
       "path": "system.valuetuple/4.5.0",
       "hashPath": "system.valuetuple.4.5.0.nupkg.sha512"
+    },
+    "Consumer/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     },
     "Migrations/1.0.0": {
       "type": "project",
