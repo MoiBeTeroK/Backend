@@ -1,4 +1,5 @@
 namespace Models.Dto.V1.Requests;
+
 public class V1CreateOrderRequest
 {
     public Order[] Orders { get; set; }
