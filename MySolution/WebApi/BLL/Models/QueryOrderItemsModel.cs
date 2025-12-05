@@ -1,3 +1,4 @@
+namespace WebApi.BLL.Models;
 public class QueryOrderItemsModel
 {
     public long[] Ids { get; set; }

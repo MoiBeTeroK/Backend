@@ -1,4 +1,5 @@
-using WebApi;
+
+using Consumer.Conf;
 using Consumer.Clients;
 using Consumer.Consumers;
 

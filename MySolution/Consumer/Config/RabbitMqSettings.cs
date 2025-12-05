@@ -1,4 +1,4 @@
-namespace WebApi;
+namespace Consumer.Conf;
 public class RabbitMqSettings
 {
     public string HostName { get; set; }

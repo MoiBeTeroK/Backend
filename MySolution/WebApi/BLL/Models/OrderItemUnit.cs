@@ -1,3 +1,4 @@
+namespace WebApi.BLL.Models;
 public class OrderItemUnit
 {
     public long Id { get; set; }

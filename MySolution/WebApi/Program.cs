@@ -1,9 +1,10 @@
 
 using Dapper;
 using FluentValidation;
-using WebApi;
+using WebApi.Conf;
 using WebApi.BLL.Services;
 using System.Text.Json;
+using WebApi.Jobs;
 // создается билдер веб приложения
 var builder = WebApplication.CreateBuilder(args);
 DefaultTypeMap.MatchNamesWithUnderscores = true;
@@ -34,6 +35,8 @@ builder.Services.AddControllers().AddJsonOptions(options =>
 });
 // добавляем swagger
 builder.Services.AddSwaggerGen();
+
+builder.Services.AddHostedService<OrderGenerator>();
 
 // собираем билдер в приложение
 var app = builder.Build();

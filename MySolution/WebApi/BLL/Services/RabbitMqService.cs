@@ -2,6 +2,7 @@ using System.Text;
 using Microsoft.Extensions.Options;
 using RabbitMQ.Client;
 using Project.Common;
+using WebApi.Conf;
 
 namespace WebApi.BLL.Services;
 

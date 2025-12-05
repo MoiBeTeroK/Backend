@@ -1,5 +1,6 @@
 using System.Text;
-using WebApi;
+using System.Diagnostics;
+using Consumer.Conf;
 using Consumer.Clients;
 using Microsoft.Extensions.Options;
 using Models.Dto.V1.Requests;
@@ -39,33 +40,49 @@ public class OmsOrderCreatedConsumer : IHostedService
             arguments: null, 
             cancellationToken: cancellationToken);
 
+        var sw = new Stopwatch();
+        await _channel.BasicQosAsync(prefetchSize: 0, prefetchCount: 1, global: false, cancellationToken: cancellationToken);
+
         _consumer = new AsyncEventingBasicConsumer(_channel);
         _consumer.ReceivedAsync += async (sender, args) =>
         {
-            var body = args.Body.ToArray();
-            var message = Encoding.UTF8.GetString(body);
-            var order = message.FromJson<OrderCreatedMessage>();
-
-            Console.WriteLine("Received: " + message);
-            
-            using var scope = _serviceProvider.CreateScope();
-            var client = scope.ServiceProvider.GetRequiredService<OmsClient>();
-            await client.LogOrder(new V1AuditLogOrderRequest
+            sw.Restart();
+            try
             {
-                Orders = order.OrderItems.Select(x => 
-                    new V1AuditLogOrderRequest.LogOrder
-                    {
-                        OrderId = order.Id,
-                        OrderItemId = x.Id,
-                        CustomerId = order.CustomerId,
-                        OrderStatus = nameof(OrderStatus.Created)
-                    }).ToArray()
-            }, CancellationToken.None);
+                var body = args.Body.ToArray();
+                var message = Encoding.UTF8.GetString(body);
+                var order = message.FromJson<OrderCreatedMessage>();
+                
+                Console.WriteLine(message);
+                
+                using var scope = _serviceProvider.CreateScope();
+                var client = scope.ServiceProvider.GetRequiredService<OmsClient>();
+                await client.LogOrder(new V1AuditLogOrderRequest
+                {
+                    Orders = order.OrderItems.Select(x => 
+                        new V1AuditLogOrderRequest.LogOrder
+                        {
+                            OrderId = order.Id,
+                            OrderItemId = x.Id,
+                            CustomerId = order.CustomerId,
+                            OrderStatus = nameof(OrderStatus.Created)
+                        }).ToArray()
+                }, CancellationToken.None);
+                await _channel.BasicAckAsync(args.DeliveryTag, false, cancellationToken);
+                Console.WriteLine($"[ACK] Message {order.Id} acknowledged");
+                sw.Stop();
+                Console.WriteLine($"Order created consumed in {sw.ElapsedMilliseconds} ms");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                await _channel.BasicNackAsync(args.DeliveryTag, false, true, cancellationToken);
+            }
         };
         
         await _channel.BasicConsumeAsync(
             queue: _rabbitMqSettings.Value.OrderCreatedQueue, 
-            autoAck: true, 
+            autoAck: false, 
             consumer: _consumer,
             cancellationToken: cancellationToken);
     }

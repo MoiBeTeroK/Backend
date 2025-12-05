@@ -1,4 +1,4 @@
-namespace WebApi;
+namespace WebApi.Conf;
 
 public class RabbitMqSettings
 {

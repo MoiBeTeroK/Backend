@@ -2,6 +2,7 @@ using Models.Dto.V1.Requests;
 using Models.Dto.V1.Responses;
 using Microsoft.AspNetCore.Mvc;
 using WebApi.BLL.Services;
+using WebApi.BLL.Models;
 
 [Route("api/v1/order")] 
 public class OrderController(OrderService orderService, ValidatorFactory validatorFactory): ControllerBase

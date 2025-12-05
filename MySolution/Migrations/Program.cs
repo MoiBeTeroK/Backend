@@ -20,6 +20,7 @@ public static class Program
         var config = new ConfigurationBuilder()
             .SetBasePath(Directory.GetCurrentDirectory())
             .AddJsonFile($"appsettings.{environmentName}.json")
+            .AddEnvironmentVariables()
             .Build();
 
         // Получаем строку подключения из конфига `appsettings.{Environment}.json`

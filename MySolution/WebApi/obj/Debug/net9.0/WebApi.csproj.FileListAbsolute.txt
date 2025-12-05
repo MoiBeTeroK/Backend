@@ -151,7 +151,6 @@
 /Users/moibeterok/Уник/Backend/MySolution/WebApi/bin/Debug/net9.0/FluentValidation.dll
 /Users/moibeterok/Уник/Backend/MySolution/WebApi/bin/Debug/net9.0/FluentValidation.AspNetCore.dll
 /Users/moibeterok/Уник/Backend/MySolution/WebApi/bin/Debug/net9.0/FluentValidation.DependencyInjectionExtensions.dll
-/Users/moibeterok/Уник/Backend/MySolution/WebApi/bin/Debug/net9.0/Microsoft.AspNetCore.OpenApi.dll
 /Users/moibeterok/Уник/Backend/MySolution/WebApi/bin/Debug/net9.0/Microsoft.Bcl.AsyncInterfaces.dll
 /Users/moibeterok/Уник/Backend/MySolution/WebApi/bin/Debug/net9.0/Microsoft.Data.SqlClient.dll
 /Users/moibeterok/Уник/Backend/MySolution/WebApi/bin/Debug/net9.0/Microsoft.Identity.Client.dll
@@ -213,9 +212,5 @@
 /Users/moibeterok/Уник/Backend/MySolution/WebApi/obj/Debug/net9.0/WebApi.csproj.Up2Date
 /Users/moibeterok/Уник/Backend/MySolution/WebApi/obj/Debug/net9.0/WebApi.genruntimeconfig.cache
 /Users/moibeterok/Уник/Backend/MySolution/WebApi/obj/Debug/net9.0/ref/WebApi.dll
-/Users/moibeterok/Уник/Backend/MySolution/WebApi/bin/Debug/net9.0/Consumer.deps.json
-/Users/moibeterok/Уник/Backend/MySolution/WebApi/bin/Debug/net9.0/Consumer.runtimeconfig.json
-/Users/moibeterok/Уник/Backend/MySolution/WebApi/bin/Debug/net9.0/Consumer.staticwebassets.endpoints.json
-/Users/moibeterok/Уник/Backend/MySolution/WebApi/bin/Debug/net9.0/Consumer
-/Users/moibeterok/Уник/Backend/MySolution/WebApi/bin/Debug/net9.0/Consumer.dll
-/Users/moibeterok/Уник/Backend/MySolution/WebApi/bin/Debug/net9.0/Consumer.pdb
+/Users/moibeterok/Уник/Backend/MySolution/WebApi/bin/Debug/net9.0/AutoFixture.dll
+/Users/moibeterok/Уник/Backend/MySolution/WebApi/bin/Debug/net9.0/Fare.dll

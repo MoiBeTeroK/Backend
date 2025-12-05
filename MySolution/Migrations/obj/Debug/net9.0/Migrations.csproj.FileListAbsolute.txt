@@ -179,3 +179,4 @@
 /Users/moibeterok/Уник/Backend/MySolution/Migrations/obj/Debug/net9.0/Migrations.pdb
 /Users/moibeterok/Уник/Backend/MySolution/Migrations/obj/Debug/net9.0/Migrations.genruntimeconfig.cache
 /Users/moibeterok/Уник/Backend/MySolution/Migrations/obj/Debug/net9.0/ref/Migrations.dll
+/Users/moibeterok/Уник/Backend/MySolution/Migrations/bin/Debug/net9.0/Microsoft.Extensions.Configuration.EnvironmentVariables.dll

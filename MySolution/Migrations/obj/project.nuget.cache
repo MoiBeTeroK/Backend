@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "2s/HvqP67PY=",
+  "dgSpecHash": "awe6tmR8PCY=",
   "success": true,
   "projectFilePath": "/Users/moibeterok/Уник/Backend/MySolution/Migrations/Migrations.csproj",
   "expectedPackageFiles": [
@@ -32,6 +32,7 @@
     "/Users/moibeterok/.nuget/packages/microsoft.data.sqlclient.sni.runtime/5.2.0/microsoft.data.sqlclient.sni.runtime.5.2.0.nupkg.sha512",
     "/Users/moibeterok/.nuget/packages/microsoft.extensions.configuration/9.0.0/microsoft.extensions.configuration.9.0.0.nupkg.sha512",
     "/Users/moibeterok/.nuget/packages/microsoft.extensions.configuration.abstractions/9.0.0/microsoft.extensions.configuration.abstractions.9.0.0.nupkg.sha512",
+    "/Users/moibeterok/.nuget/packages/microsoft.extensions.configuration.environmentvariables/8.0.0/microsoft.extensions.configuration.environmentvariables.8.0.0.nupkg.sha512",
     "/Users/moibeterok/.nuget/packages/microsoft.extensions.configuration.fileextensions/9.0.0/microsoft.extensions.configuration.fileextensions.9.0.0.nupkg.sha512",
     "/Users/moibeterok/.nuget/packages/microsoft.extensions.configuration.json/9.0.0/microsoft.extensions.configuration.json.9.0.0.nupkg.sha512",
     "/Users/moibeterok/.nuget/packages/microsoft.extensions.dependencyinjection/9.0.0/microsoft.extensions.dependencyinjection.9.0.0.nupkg.sha512",

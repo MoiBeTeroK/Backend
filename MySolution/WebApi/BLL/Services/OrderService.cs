@@ -1,5 +1,7 @@
 using Microsoft.Extensions.Options;
 using Project.Messages;
+using WebApi.BLL.Models;
+using WebApi.Conf;
 namespace WebApi.BLL.Services;
 public class OrderService(UnitOfWork unitOfWork, IOrderRepository orderRepository, IOrderItemRepository orderItemRepository, RabbitMqService _rabbitMqService, IOptions<RabbitMqSettings> settings)
 {
